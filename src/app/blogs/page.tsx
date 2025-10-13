@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
+import ReactMarkdown from "react-markdown";
 
 interface Blog {
   fermionBlogId: string;
@@ -117,9 +118,9 @@ export default function BlogsPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
                   {featuredBlog.titleMarkdown}
                 </h2>
-                <p className="text-gray-600 text-sm md:text-base mb-4 line-clamp-3">
-                  {featuredBlog.contentMarkdown}
-                </p>
+                <div className="text-gray-600 text-sm md:text-base mb-4 line-clamp-3">
+                  <ReactMarkdown>{featuredBlog.contentMarkdown}</ReactMarkdown>
+                </div>
                 <Link
                   href={`${process.env.NEXT_PUBLIC_SUBDOMAIN_URL}/blog/${featuredBlog.slug}`}
                   className="inline-block bg-[#097aee] hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded shadow transition"
@@ -184,9 +185,9 @@ export default function BlogsPage() {
                     <h3 className="text-xl md:text-2xl font-bold text-gray-900 hover:text-purple-600 transition mb-3">
                       {blog.titleMarkdown}
                     </h3>
-                    <p className="text-gray-600 text-sm md:text-base mb-2 line-clamp-3">
-                      {blog.contentMarkdown}
-                    </p>
+                    <div className="prose prose-sm md:prose-base text-gray-600 max-w-none line-clamp-3">
+                      <ReactMarkdown>{blog.contentMarkdown}</ReactMarkdown>
+                    </div>
                   </div>
                 </div>
               </Link>

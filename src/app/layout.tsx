@@ -10,9 +10,54 @@ import AnalyticsListener from "@/components/AnalyticsListener";
 import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
-  title: "UpRaise",
-  description: "UpRaise - Your learning platform",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  title: {
+    default: "UpRaise Learning | Elevate Your Knowledge & Career",
+    template: "%s | UpRaise Learning",
+  },
+  description:
+    "UpRaise Learning empowers learners with expert-led online courses, skill development, and career growth programs designed for future-ready professionals.",
+  keywords: [
+    "UpRaise Learning",
+    "online courses",
+    "career development",
+    "learning platform",
+    "professional training",
+    "skill development",
+  ],
+  authors: [{ name: "UpRaise Learning", url: "https://www.upraiselearning.com" }],
+  metadataBase: new URL("https://www.upraiselearning.com"),
+  openGraph: {
+    title: "UpRaise Learning | Elevate Your Knowledge & Career",
+    description:
+      "Join UpRaise Learning to unlock your full potential through expert-led online courses and professional training programs.",
+    url: "https://www.upraiselearning.com",
+    siteName: "UpRaise Learning",
+    images: [
+      {
+        url: "https://www.upraiselearning.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "UpRaise Learning - Online Learning Platform",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "UpRaise Learning | Elevate Your Knowledge & Career",
+    description:
+      "Expert-led online courses to accelerate your career growth. Start learning today with UpRaise Learning.",
+    images: ["https://www.upraiselearning.com/og-image.jpg"],
+    creator: "@upraiselearning",
+  },
+  alternates: {
+    canonical: "https://www.upraiselearning.com",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 const geist = Geist({
@@ -80,6 +125,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               contactType: "",
             },
           ],
+        })}
+      </Script>
+      <Script
+        id="website-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+      >
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "UpRaise Learning",
+          url: "https://www.upraiselearning.com",
+          potentialAction: {
+            "@type": "SearchAction",
+            target: "https://www.upraiselearning.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string",
+          },
         })}
       </Script>
     </html>
