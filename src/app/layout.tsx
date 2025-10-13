@@ -1,0 +1,87 @@
+import "@/styles/globals.css";
+
+import type { Metadata } from "next";
+import Navbar from "@/components/Navbar";
+import { Geist } from "next/font/google";
+import Footer from "@/components/Footer";
+import { SplashScreenProvider } from "@/components/SplashScreen";
+import Script from "next/script";
+import AnalyticsListener from "@/components/AnalyticsListener";
+import { Analytics } from "@vercel/analytics/next"
+
+export const metadata: Metadata = {
+  title: "UpRaise",
+  description: "UpRaise - Your learning platform",
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
+};
+
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+});
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body className={geist.variable}>
+        <AnalyticsListener />
+        <Analytics />
+        <SplashScreenProvider>
+          <Navbar />
+          <div className="w-full">
+            {children}
+          </div>
+          <Footer />
+        </SplashScreenProvider>
+      </body>
+      {/* Google tag (gtag.js) */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-EN9ZJ8C4T0"
+        strategy="afterInteractive"
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+      >
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-EN9ZJ8C4T0');
+        `}
+      </Script>
+      {/* ✅ Organization Structured Data */}
+      <Script id="organization-schema" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "upraiselearning",
+          url: "https://www.upraiselearning.com",
+          logo: "https://www.upraiselearning.com/_next/image?url=%2FUpRaise%20Logo.png&w=256&q=75",
+          alternateName: "upraiselearning",
+          sameAs: [
+            "https://www.instagram.com/upraise_learning?igsh=MW9mMWo2NzJ5ajkwbQ==",
+            "https://www.facebook.com/share/16DQze1ke8/",
+            "https://youtube.com/@upraiselearning?si=P4v8of05jl01YjKx",
+            "https://www.linkedin.com/company/upraise-learning/",
+          ],
+          contactPoint: [
+            {
+              "@type": "ContactPoint",
+              telephone: "7029934287",
+              contactType: "",
+              email: "info@upraiselearning.com",
+              availableLanguage: "en",
+            },
+            {
+              "@type": "ContactPoint",
+              telephone: "",
+              contactType: "",
+            },
+          ],
+        })}
+      </Script>
+    </html>
+  );
+}
