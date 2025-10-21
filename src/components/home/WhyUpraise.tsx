@@ -4,14 +4,32 @@ import Image from "next/image";
 import Container from "../Container";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react"
+import { usePathname } from "next/navigation";
 
 export default function WhyUpraise() {
+    const pathname = usePathname();
     const SUBDOMAIN_URL = process.env.NEXT_PUBLIC_SUBDOMAIN_URL ?? "#";
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const images = Array(9).fill("/reviews/card new.png");
+    
+      useEffect(() => {
+        // Remove the default instant jump
+        if (window.location.hash) {
+          // Wait for the page to render first
+          setTimeout(() => {
+            const hash = window.location.hash.substring(1);
+            const section = document.getElementById(hash);
+            if (section) {
+              section.scrollIntoView({ behavior: "smooth", block: "start" });
+              // Remove hash jump from the URL bar if you want to keep it clean:
+              history.replaceState(null, "", window.location.pathname);
+            }
+          }, 200); // small delay ensures layout is ready
+        }
+      }, [pathname]);
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -117,7 +135,7 @@ export default function WhyUpraise() {
                     </div>
                 </Container>
             </section>
-            <section className="bg-white text-center relative cursor-default">
+            <section id="reviews" className="bg-white text-center relative cursor-default">
                 <Container>
                     <div className="my-6 md:my-4">
                         <p className="text-4xl font-bold text-gray-900 mb-4">Don&apos;t believe us? Hear from our students.</p>

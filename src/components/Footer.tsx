@@ -82,8 +82,14 @@ const Footer = () => {
                             </div>
                             <div className="flex items-center">
                                 <Mail className="w-4 h-4 mr-2 text-blue-400" />
-                                <span className="text-sm">support@upraiselearning.com</span>
+                                <a
+                                    href="mailto:support@upraiselearning.com"
+                                    className="text-sm hover:underline"
+                                >
+                                    support@upraiselearning.com
+                                </a>
                             </div>
+
                         </div>
                     </div>
 

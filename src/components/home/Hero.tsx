@@ -118,15 +118,15 @@ export default function Hero() {
             >
               <li className="flex items-center gap-2">
                 <Image src="/green_tick.svg" alt="tick" width={20} height={20} /> 
-                World&apos;s Top Instructors
+                Master Skills That Matter
               </li>
               <li className="flex items-center gap-2">
                 <Image src="/green_tick.svg" alt="tick" width={20} height={20} /> 
-                Skill-Based Training
+                Stay Ahead of Tomorrow&apos;s Demands
               </li>
               <li className="flex items-center gap-2">
                 <Image src="/green_tick.svg" alt="tick" width={20} height={20} /> 
-                Future-Proof Your Career
+                Personalized Learning Pathways
               </li>
             </motion.ul>
 

@@ -87,7 +87,7 @@ export default function PricingSection() {
                         </span>
 
                         <button
-                            onClick={() => setIsYearly(!isYearly)}
+                            // onClick={() => setIsYearly(!isYearly)}
                             className={`relative inline-flex h-6 w-12 rounded-full transition cursor-pointer ${isYearly ? "bg-[#097aee]" : "bg-gray-300"
                                 }`}
                         >
@@ -136,7 +136,7 @@ export default function PricingSection() {
                             </div>
 
                             {/* Price */}
-                            <div className="mb-6">
+                            {/* <div className="mb-6">
                                 <span className="text-4xl font-bold">
                                     ₹{isYearly ? plan.yearlyMonthly * 12 : plan.monthly}
                                 </span>
@@ -148,7 +148,7 @@ export default function PricingSection() {
                                         ₹{plan.yearlyMonthly} billed monthly
                                     </div>
                                 )}
-                            </div>
+                            </div> */}
 
                             {/* Features */}
                             <ul className="space-y-3 flex-1 mb-3">

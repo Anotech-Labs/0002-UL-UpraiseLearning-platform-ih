@@ -24,6 +24,7 @@
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",
     "@t3-oss/env-nextjs": "^0.12.0",
+    "@tailwindcss/postcss": "^4.1.14",
     "@vercel/analytics": "^1.5.0",
     "axios": "^1.12.2",
     "bcryptjs": "^2.4.3",
@@ -34,15 +35,16 @@
     "motion": "^12.23.11",
     "next": "^15.2.3",
     "next-sitemap": "^4.2.3",
+    "postcss": "^8.5.6",
     "postgres": "^3.4.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-markdown": "^10.1.0",
+    "tailwindcss": "^4.1.14",
     "zod": "^3.24.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "@tailwindcss/postcss": "^4.0.15",
     "@types/bcryptjs": "^2.4.6",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^20.19.14",
@@ -52,10 +54,8 @@
     "eslint": "^9.23.0",
     "eslint-config-next": "^15.2.3",
     "eslint-plugin-drizzle": "^0.2.3",
-    "postcss": "^8.5.3",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^4.0.15",
     "tsx": "^4.20.5",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.27.0"

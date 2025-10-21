@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
                     {/* Page Header */}
                     <header className="mb-8">
                         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
-                        <p className="text-gray-600">Last Updated: [Date]</p>
+                        <p className="text-gray-600">Last Updated: 27 September 2024</p>
                     </header>
 
                     {/* Introduction Section */}
@@ -141,8 +141,7 @@ export default function PrivacyPolicyPage() {
                         <section id="contact">
                             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Contact Information</h2>
                             <div className="text-gray-700 space-y-4">
-                                <p>For privacy-specific inquiries: <a href="mailto:privacy@upraiselearning.com" className="text-blue-600 hover:underline">privacy@upraiselearning.com</a></p>
-                                <p>For general support: <a href="mailto:info@upraiselearning.com" className="text-blue-600 hover:underline">info@upraiselearning.com</a></p>
+                                <p>For support: <a href="mailto:info@upraiselearning.com" className="text-blue-600 hover:underline">info@upraiselearning.com</a></p>
                                 <address className="not-italic bg-gray-50 p-4 rounded">
                                     Anotech India Solutions Pvt. Ltd. (Upraise Learning)<br />
                                     Unit-471, 3rd Floor, Sentrum Mall, Srishtinagar, Asansol<br />

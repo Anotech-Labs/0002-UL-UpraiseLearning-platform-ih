@@ -18,6 +18,8 @@ export const metadata: Metadata = {
     "UpRaise Learning empowers learners with expert-led online courses, skill development, and career growth programs designed for future-ready professionals.",
   keywords: [
     "UpRaise Learning",
+    "Upraise Learning",
+    "upraise learning",
     "online courses",
     "career development",
     "learning platform",
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "UpRaise Learning",
     images: [
       {
-        url: "https://www.upraiselearning.com/og-image.jpg",
+        url: "https://www.upraiselearning.com/UpRaise Logo.png",
         width: 1200,
         height: 630,
         alt: "UpRaise Learning - Online Learning Platform",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     title: "UpRaise Learning | Elevate Your Knowledge & Career",
     description:
       "Expert-led online courses to accelerate your career growth. Start learning today with UpRaise Learning.",
-    images: ["https://www.upraiselearning.com/og-image.jpg"],
+    images: ["https://www.upraiselearning.com/UpRaise Logo.png"],
     creator: "@upraiselearning",
   },
   alternates: {
