@@ -60,6 +60,9 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
+    other: {
+    "google-site-verification": "vpRqKrXExo_DQWNZAiLWDdBw3WRmr2SE5Vtj9QeP4t4"
+  }
 };
 
 const geist = Geist({
