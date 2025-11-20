@@ -36,15 +36,17 @@ const VideoReviews: React.FC = () => {
         }
       });
 
+      video.currentTime = 0;
+
       // Unmute the clicked video (it's already playing)
       video.muted = false;
       setPlayingIndex(index);
     }
   };
 
-const handleClick = () => {
+  const handleClick = () => {
     router.push("/#reviews");
-};
+  };
 
   return (
     <section className="px-4 py-12 max-w-7xl mx-auto">

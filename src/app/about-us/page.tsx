@@ -2,7 +2,7 @@ import Container from "@/components/Container";
 import HeroSection from "@/components/about-us/HeroSection";
 import Carousel from "@/components/about-us/Carousel";
 import BlogSection from "@/components/about-us/BlogSection";
-// import VideoReviews from "@/components/about-us/VideoReviews";
+import VideoReviews from "@/components/about-us/VideoReviews";
 
 export default function AboutUsPage() {
 
@@ -13,7 +13,7 @@ export default function AboutUsPage() {
             <Container>
                 <HeroSection />
                 <Carousel />
-                {/* <VideoReviews /> */}
+                <VideoReviews />
                 <BlogSection />
             </Container>
         </div>

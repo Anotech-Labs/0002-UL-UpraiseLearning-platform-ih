@@ -7,7 +7,7 @@ import Explore from "@/components/home/Explore";
 import PricingSection from "@/components/home/PricingSection";
 import NewsletterSection from "@/components/home/NewsletterSection";
 import ParallaxSection from "@/components/home/ParallaxSection";
-// import VideoSection from "@/components/home/VideoSection";
+import VideoSection from "@/components/home/VideoSection";
 
 export default function HomePage() {
 
@@ -20,7 +20,7 @@ export default function HomePage() {
         <MeetInstructors />
         <ParallaxSection />
         <WhyUpraise />
-        {/* <VideoSection /> */}
+        <VideoSection />
         <NewsletterSection />
         <PricingSection />
       </main>
