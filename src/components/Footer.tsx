@@ -98,8 +98,8 @@ const Footer = () => {
                         <div key={section}>
                             <h3 className="text-white font-semibold text-lg mb-4">{section}</h3>
                             <ul className="space-y-2">
-                                {links.map((link) => (
-                                    <li key={link.href}>
+                                {links.map((link, index) => (
+                                    <li key={`${section}-${link.href}-${index}`}>
                                         <Link
                                             href={link.href}
                                             className="text-sm hover:text-white transition-colors"
@@ -144,7 +144,7 @@ const Footer = () => {
 
                 {/* Bottom Section */}
                 <div className="border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center">
-                    <div className="text-sm text-gray-400 mb-4 md:mb-0">© 2025 Upraise Learning - Anotech India Solutions Pvt Ltd</div>
+                    <div className="text-sm text-gray-400 mb-4 md:mb-0">© 2025 Anotech India Solutions Pvt Ltd</div>
                     <div className="flex space-x-4">
                         {socialLinks.map(({ icon: Icon, href, label }) => (
                             <Link
