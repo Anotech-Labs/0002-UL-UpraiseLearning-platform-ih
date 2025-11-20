@@ -191,22 +191,37 @@ export default function CoursesPage() {
               <p className="text-sm text-gray-500 mt-2">Try adjusting your search criteria</p>
             </div>
           ) : (
-            courses.map((course, index) => (
-              <div
-                key={course.id}
+              // <div
+              //   key={course.id}
+              //   className="animate-fadeIn"
+              //   style={{ animationDelay: `${index * 50}ms` }}
+              // >
+              //   <CourseCard
+              //     course={{
+              //       ...course,
+              //       instructor: course.instructor ?? {
+              //         name: "Unknown Instructor",
+              //         avatar: "/default-avatar.png",
+              //       },
+              //     }}
+              //   />
+              // </div>
+              [...courses].reverse().map((course, index) => (
+                  <div
+                    key={course.id}
                 className="animate-fadeIn"
                 style={{ animationDelay: `${index * 50}ms` }}
-              >
-                <CourseCard
-                  course={{
+                  >
+                    <CourseCard
+                      course={{
                     ...course,
                     instructor: course.instructor ?? {
                       name: "Unknown Instructor",
                       avatar: "/default-avatar.png",
                     },
                   }}
-                />
-              </div>
+                    />
+                  </div>
             ))
           )}
         </div>

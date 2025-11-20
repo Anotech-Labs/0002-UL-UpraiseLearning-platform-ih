@@ -3,6 +3,12 @@ import { useState } from "react";
 import { Heart, Star, Play, BarChart3 } from "lucide-react";
 import Image from "next/image";
 
+// Define available course IDs
+const AVAILABLE_COURSE_IDS = [
+  "68ed6ab67502bad57131b505",
+  "68ecde376f347fb3e5fa449f"
+];
+
 // TypeScript interface for Course
 export interface Course {
   id: string;
@@ -33,6 +39,9 @@ const CourseCard: React.FC<CourseCardProps> = ({
   className = "",
 }) => {
   const [isLiked, setIsLiked] = useState(false);
+  const isAvailable = AVAILABLE_COURSE_IDS.includes(course.id);
+
+  console.log("course", course.id);
 
   return (
     <div
@@ -45,6 +54,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
             src={course.thumbnail}
             alt={course.title}
             fill
+            sizes=""
             className="object-cover"
           />
 
@@ -106,6 +116,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
                 <Image
                   src={course.instructor.avatar}
                   alt={course.instructor.name}
+                  sizes=""
                   fill
                   className="rounded-full object-cover"
                 />
@@ -114,13 +125,18 @@ const CourseCard: React.FC<CourseCardProps> = ({
                 {course.instructor.name}
               </span>
             </div>
-            <span
-              // href={course.link}
-              className="text-[#097aee] hover:text-blue-700 font-medium text-sm transition-colors cursor-pointer"
-            >
-              {/* Enroll Now → */}
-              Coming Soon...
-            </span>
+            {isAvailable ? (
+              <a
+                href={course.link}
+                className="text-[#097aee] hover:text-blue-700 font-medium text-sm transition-colors cursor-pointer"
+              >
+                Enroll Now →
+              </a>
+            ) : (
+              <span className="text-gray-400 font-medium text-sm">
+                Coming Soon...
+              </span>
+            )}
           </div>
         )}
       </div>
